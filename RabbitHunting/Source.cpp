@@ -15,7 +15,7 @@ int main() {
 	return 0;
 }
 
-void hunting(int hunterPosition, int rabbitPosition,int &best, int treeLevel) {
+void hunting(int hunterPosition, int rabbitPosition, int &best, int treeLevel) {
 	if (treeLevel < best) {
 		if (hunterPosition == rabbitPosition) {
 			best = treeLevel;
