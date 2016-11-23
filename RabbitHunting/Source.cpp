@@ -1,6 +1,6 @@
 #include<iostream>
 
-void hunting(int hunterPosition, int rabbitPosition, int best, int treeLevel = 0, int action = 0);
+void hunting(int hunterPosition, int rabbitPosition, int best, int treeLevel = 0);
 int abs(int A);
 
 int main() {
@@ -15,8 +15,7 @@ int main() {
 	return 0;
 }
 
-void hunting(int hunterPosition, int rabbitPosition,int best, int treeLevel, int action) {
-	hunterPosition = hunterPosition + action;
+void hunting(int hunterPosition, int rabbitPosition,int best, int treeLevel) {
 
 	std::cout << "Hunter: " << hunterPosition << std::endl;
 	std::cout << "Rabbit: " << rabbitPosition << std::endl;
@@ -29,9 +28,9 @@ void hunting(int hunterPosition, int rabbitPosition,int best, int treeLevel, int
 			best = treeLevel;
 		}
 		else {
-			hunting(hunterPosition, rabbitPosition, best, treeLevel + 1, -1);
-			hunting(hunterPosition, rabbitPosition, best, treeLevel + 1, +1);
-			hunting(hunterPosition, rabbitPosition, best, treeLevel + 1, hunterPosition);
+			hunting(hunterPosition-1, rabbitPosition, best, treeLevel + 1);
+			hunting(hunterPosition+1, rabbitPosition, best, treeLevel + 1);
+			hunting(hunterPosition*2, rabbitPosition, best, treeLevel + 1);
 		}
 	}
 }
