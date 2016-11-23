@@ -110,7 +110,7 @@ bool promising(int i) {
 	bool pSwitch;
 	pSwitch = true;
 	j = 1;
-	while (j<i && pSwitch) {
+	while ((j<i) && pSwitch) {
 		if (W[i][j] && (vcolor[i] == vcolor[j])) {
 			pSwitch = false;
 		}
